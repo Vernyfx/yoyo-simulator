@@ -1,0 +1,608 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("VernyHub", "Midnight")
+
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("AutoFarm")
+
+if game.PlaceId == 7606302010 then
+
+--yoyo
+
+MainSection:NewToggle("AutoYoYo", "ToggleInfo", function(state)
+    if state then
+        _G.autoyoyo = true;
+
+task.spawn(function()
+    while _G.autoyoyo == true do
+local args = {
+    [1] = "Purple Yo-Yo",
+    [2] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.ToolEvents.ToolEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autoyoyo = false;
+
+task.spawn(function()
+    while _G.autoyoyo == true do
+local args = {
+    [1] = "Purple Yo-Yo",
+    [2] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.ToolEvents.ToolEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+--auto sell
+local MainSection = Main:NewSection("AutoSell")
+MainSection:NewLabel("Select Which world u want to sell")
+
+MainSection:NewButton("Spawn", "sells hehe", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Sell.Home.HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+MainSection:NewButton("Candyland", "sells hehe", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Sell.Candyland.HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+MainSection:NewButton("Desert", "sells hehe", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Sell.Magma.HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+MainSection:NewButton("Atlantis", "sells hehe", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Sell.Desert.HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+MainSection:NewButton("Magma", "sells hehe", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Sell.Atlantis.HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+--autoeggs
+
+
+local Main = Window:NewTab("AutoEggs")
+local MainSection = Main:NewSection("Home")
+
+MainSection:NewLabel("Must be close to the egg")
+--home
+MainSection:NewToggle("Auto started egg", "opens starter egg", function(state)
+    if state then
+        _G.autohomeegg = true;
+
+task.spawn(function()
+    while _G.autohomeegg == true do
+
+local args = {
+    [1] = "Starter Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autohomeegg = false;
+
+task.spawn(function()
+    while _G.autohomeegg == true do
+
+local args = {
+    [1] = "Starter Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+MainSection:NewToggle("Auto rare egg", "opens rare egg", function(state)
+    if state then
+        _G.autorareegg = true;
+
+task.spawn(function()
+    while _G.autorareegg == true do
+
+local args = {
+    [1] = "Rare Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autorareegg = false;
+
+task.spawn(function()
+    while _G.autorareegg == true do
+
+local args = {
+    [1] = "Rare Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+--candyland
+local MainSection = Main:NewSection("Candyland")
+
+MainSection:NewToggle("Auto ice cream egg", "opens ice cream egg", function(state)
+    if state then
+        _G.autoiceegg = true;
+
+task.spawn(function()
+    while _G.autoiceegg == true do
+
+local args = {
+    [1] = "Ice Cream Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autoiceegg = false;
+
+task.spawn(function()
+    while _G.autoiceegg == true do
+
+local args = {
+    [1] = "Ice Cream Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+MainSection:NewToggle("Auto candy cane egg", "opens candy cane egg", function(state)
+    if state then
+        _G.autocandyegg = true;
+
+task.spawn(function()
+    while _G.autocandyegg == true do
+
+local args = {
+    [1] = "Candy Cane Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autocandyegg = false;
+
+task.spawn(function()
+    while _G.autocandyegg == true do
+
+local args = {
+    [1] = "Candy Cane Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+--desert
+
+local MainSection = Main:NewSection("Desert")
+
+
+MainSection:NewToggle("Auto cactus egg", "opens cactus egg", function(state)
+    if state then
+        _G.autocactusegg = true;
+
+task.spawn(function()
+    while _G.autocactusegg == true do
+
+local args = {
+    [1] = "Cactus Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autocactusegg = false;
+
+task.spawn(function()
+    while _G.autocactusegg == true do
+
+local args = {
+    [1] = "Cactus Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+MainSection:NewToggle("Auto mummy egg", "opens mummy egg", function(state)
+    if state then
+        _G.automummyegg = true;
+
+task.spawn(function()
+    while _G.automummyegg == true do
+
+local args = {
+    [1] = "Mummy Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.automummyegg = false;
+
+task.spawn(function()
+    while _G.automummyegg == true do
+
+local args = {
+    [1] = "Mummy Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+
+--magma
+
+
+local MainSection = Main:NewSection("Magma")
+
+
+MainSection:NewToggle("Auto lavarock egg", "opens starter egg", function(state)
+    if state then
+        _G.autolavaegg = true;
+
+task.spawn(function()
+    while _G.autolavaegg == true do
+
+local args = {
+    [1] = "Lava Rock Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autolavaegg = false;
+
+task.spawn(function()
+    while _G.autolavaegg == true do
+
+local args = {
+    [1] = "Lava Rock Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+
+MainSection:NewToggle("Auto volcano egg", "opens volcano egg", function(state)
+    if state then
+        _G.autovolcegg = true;
+
+task.spawn(function()
+    while _G.autovolcegg == true do
+
+local args = {
+    [1] = "Volcano Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autovolcegg = false;
+
+task.spawn(function()
+    while _G.autovolcegg == true do
+
+local args = {
+    [1] = "Volcano Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+--atlantis
+
+local MainSection = Main:NewSection("Atlantis")
+
+MainSection:NewToggle("Auto neptune egg", "opens neptune egg", function(state)
+    if state then
+        _G.autoneptegg = true;
+
+task.spawn(function()
+    while _G.autoneptegg == true do
+
+local args = {
+    [1] = "Neptune Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autoneptegg = false;
+
+task.spawn(function()
+    while _G.autoneptegg == true do
+
+local args = {
+    [1] = "Neptune Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+
+
+MainSection:NewToggle("Auto cthulu egg", "opens cthulu egg", function(state)
+    if state then
+        _G.autohuluegg = true;
+
+task.spawn(function()
+    while _G.autohuluegg == true do
+
+local args = {
+    [1] = "Cthulu Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autohuluegg = false;
+
+task.spawn(function()
+    while _G.autohuluegg == true do
+
+local args = {
+    [1] = "Cthulu Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+--Shop/Guis
+
+local Main = Window:NewTab("Shop/Guis")
+local MainSection = Main:NewSection("Shops")
+
+
+
+
+
+MainSection:NewButton("Shop", "opens shop hehe", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Shop.Candyland:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+
+local MainSection = Main:NewSection("Machines")
+
+
+MainSection:NewButton("Gold Machine", "Opens gold machine hehe", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Machines.Gold:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+--rewards
+
+local MainSection = Main:NewSection("Rewards")
+
+
+
+MainSection:NewButton("Atlantis Reward", "Claims atlantis reward", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Chests["Atlantis Reward"].HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+
+MainSection:NewButton("Group Reward", "Has to be in the group", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Chests["Group Reward"].HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+MainSection:NewButton("Daily Reward", "Claims ur daily reward", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Chests["Daily Reward"].HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+
+MainSection:NewButton("Candy reward", "Claims ur candy reward", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Chests["Candy Reward"].HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+
+MainSection:NewButton("Magma reward", "Claims ur magma reward", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Chests["Magma Reward"].HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+end
