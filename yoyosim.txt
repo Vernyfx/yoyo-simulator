@@ -624,3 +624,70 @@ MainSection:NewButton("Reset WS/JS", "Resets them to default", function()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
+
+
+-- world tp
+
+local Main = Window:NewTab("World TP")
+local MainSection = Main:NewSection("World Tp")
+MainSection:NewLabel("Make sure u unlock the world before u tp")
+
+
+MainSection:NewButton("Candyland", "Tps to candyland", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Portals.Candyland.Door:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+MainSection:NewButton("Desert", "Tps to desert", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Portals.Desert.Door:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+MainSection:NewButton("Magma", "Tps to magma", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Portals.Magma.Door:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+MainSection:NewButton("Atlantis", "Tps to atlantis", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Portals.Atlantis.Door:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
