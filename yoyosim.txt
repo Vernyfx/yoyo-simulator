@@ -606,3 +606,21 @@ end
 wait()
 end)
 end
+
+--misc
+
+local Main = Window:NewTab("Misc")
+local MainSection = Main:NewSection("Misc")
+
+MainSection:NewSlider("Walkspeed", "Changes ur speed", 500, 30, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MainSection:NewSlider("Jumppower", "Changes ur Jumppower", 350, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+MainSection:NewButton("Reset WS/JS", "Resets them to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
