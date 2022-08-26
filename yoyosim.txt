@@ -480,6 +480,87 @@ end)
     end
 end)
 
+--food
+
+
+local MainSection = Main:NewSection("Food Eggs")
+
+
+MainSection:NewToggle("Auto watermelon egg", "opens watermelon egg", function(state)
+    if state then
+        _G.autohuluegg = true;
+
+task.spawn(function()
+    while _G.autohuluegg == true do
+
+local args = {
+    [1] = "Watermelon Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autohuluegg = false;
+
+task.spawn(function()
+    while _G.autohuluegg == true do
+
+local args = {
+    [1] = "Watermelon Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+
+MainSection:NewToggle("Auto burger egg", "opens burger egg", function(state)
+    if state then
+        _G.autohuluegg = true;
+
+task.spawn(function()
+    while _G.autohuluegg == true do
+
+local args = {
+    [1] = "Burger Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    else
+        _G.autohuluegg = false;
+
+task.spawn(function()
+    while _G.autohuluegg == true do
+
+local args = {
+    [1] = "Burger Egg",
+    [2] = "SingleEgg",
+    [3] = game:GetService("Players").LocalPlayer
+}
+game:GetService("ReplicatedStorage").GameEvents.EggEvent:FireServer(unpack(args))
+wait()
+    end
+end)
+    end
+end)
+
+
+
+
+
+
+
 --Shop/Guis
 
 local Main = Window:NewTab("Shop/Guis")
@@ -573,7 +654,7 @@ if v.Name == "TouchInterest" and v.Parent then
 end
 wait()
 end)
-
+end
 
 
 MainSection:NewButton("Candy reward", "Claims ur candy reward", function()
@@ -605,7 +686,35 @@ if v.Name == "TouchInterest" and v.Parent then
 end
 wait()
 end)
+
+
+MainSection:NewButton("Food Reward", "claims food reward", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Chests["Food Reward"].HitBox:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
 end
+wait()
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --misc
 
@@ -691,3 +800,31 @@ if v.Name == "TouchInterest" and v.Parent then
 end
 wait()
 end)
+
+MainSection:NewButton("Food", "Tps to Food island", function()
+    local playerhead = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game:GetService("Workspace").MapFunctions.Portals.Food.Door:GetDescendants()) do
+if v.Name == "TouchInterest" and v.Parent then
+
+    firetouchinterest(playerhead, v.Parent, 0)
+    wait(0.1)
+    firetouchinterest(playerhead, v.Parent, 1)
+    break;
+   end
+end
+wait()
+end)
+
+
+
+
+--UItoggle
+
+local Main = Window:NewTab("UIToggle")
+
+local MainSection = Main:NewSection("UIToggle")
+
+MainSection:NewKeybind("ToggleUI", "KeybindInfo", Enum.KeyCode.G, function()
+	Library:ToggleUI()
+end)
+
